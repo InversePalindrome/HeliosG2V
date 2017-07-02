@@ -1,28 +1,26 @@
 /*
 Copyright (c) 2017 InversePalindrome
-HeliosG2V - Application.hpp
+HeliosG2V - State.hpp
 InversePalindrome.com
 */
 
 
 #pragma once
 
-#include "StateMachine.hpp"
-
-#include <irrlicht.h>
+#include <IrrlichtDevice.h>
 
 
-class Application
+class StateMachine;
+
+class State
 {
 public:
-	Application();
+	State(StateMachine* stateMachine, irr::IrrlichtDevice* device);
 
-	void run();
+	virtual void update() = 0;
 
 private:
 	irr::IrrlichtDevice* device;
 	irr::video::IVideoDriver* video;
 	irr::scene::ISceneManager* sceneManager;
-
-	StateMachine stateMachine;
 };

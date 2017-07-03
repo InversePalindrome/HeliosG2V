@@ -9,9 +9,8 @@ InversePalindrome.com
 #include "StateMachine.hpp"
 
 
-State::State(StateMachine* stateMachine, irr::IrrlichtDevice* device) :
-	device(device),
-	video(device->getVideoDriver()),
-	sceneManager(device->getSceneManager())
+State::State(StateMachine* stateMachine, StateData* stateData) :
+	stateMachine(stateMachine),
+	stateData(stateData)
 {
 }

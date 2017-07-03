@@ -6,15 +6,29 @@ InversePalindrome.com
 
 
 #include "StateMachine.hpp"
+#include "SimulationState.hpp"
 #include "IntroState.hpp"
+#include "StartState.hpp"
 
 
-StateMachine::StateMachine(irr::IrrlichtDevice* device) :
+StateMachine::StateMachine(StateData* stateData) :
 	states(),
 	stateActions(),
 	stateFactory()
 {
-	registerState<IntroState>(StateID::Intro, device);
+	registerState<IntroState>(StateID::Intro, stateData);
+	registerState<StartState>(StateID::Start, stateData);
+	registerState<SimulationState>(StateID::Simulation, stateData);
+}
+
+void StateMachine::handleEvent()
+{
+	if (!this->states.empty())
+	{
+		this->states.back()->handleEvent();
+	}
+
+	this->processStateActions();
 }
 
 void StateMachine::update()
@@ -25,6 +39,14 @@ void StateMachine::update()
 	}
 
 	this->processStateActions();
+}
+
+void StateMachine::draw()
+{
+	if (!this->states.empty())
+	{
+		this->states.back()->draw();
+	}
 }
 
 void StateMachine::pushState(StateID stateID)

@@ -7,6 +7,8 @@ InversePalindrome.com
 
 #pragma once
 
+#include "StateData.hpp"
+
 #include <IrrlichtDevice.h>
 
 
@@ -15,12 +17,13 @@ class StateMachine;
 class State
 {
 public:
-	State(StateMachine* stateMachine, irr::IrrlichtDevice* device);
+	State(StateMachine* stateMachine, StateData* stateData);
 
+	virtual void handleEvent() = 0;
 	virtual void update() = 0;
+	virtual void draw() = 0;
 
-private:
-	irr::IrrlichtDevice* device;
-	irr::video::IVideoDriver* video;
-	irr::scene::ISceneManager* sceneManager;
+protected:
+	StateMachine* stateMachine;
+	StateData* stateData;
 };

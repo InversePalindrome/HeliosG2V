@@ -7,6 +7,7 @@ InversePalindrome.com
 
 #pragma once
 
+#include "StateData.hpp"
 #include "StateMachine.hpp"
 
 #include <irrlicht.h>
@@ -20,9 +21,17 @@ public:
 	void run();
 
 private:
+	InputHandler inputHandler;
+
 	irr::IrrlichtDevice* device;
 	irr::video::IVideoDriver* video;
 	irr::scene::ISceneManager* sceneManager;
+	irr::gui::IGUIEnvironment* gui;
 
+	StateData stateData;
 	StateMachine stateMachine;
+	
+	void handleEvent();
+	void update();
+	void render();
 };

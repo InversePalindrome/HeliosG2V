@@ -1,6 +1,6 @@
 /*
 Copyright (c) 2017 InversePalindrome
-HeliosG2V - IntroState.hpp
+HeliosG2V - StartState.hpp
 InversePalindrome.com
 */
 
@@ -9,20 +9,16 @@ InversePalindrome.com
 
 #include "State.hpp"
 
-#include <ITimer.h>
 
-
-class IntroState : public State
+class StartState : public State
 {
 public:
-	IntroState(StateMachine* stateMachine, StateData* stateData);
+	StartState(StateMachine* stateMachine, StateData* stateData);
 
 	virtual void handleEvent() override;
 	virtual void update() override;
 	virtual void draw() override;
 
 private:
-	irr::video::ITexture* logo;
-	irr::ITimer* timer;
+	irr::video::ITexture* background;
 };
-

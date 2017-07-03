@@ -17,17 +17,18 @@ InversePalindrome.com
 #include <IrrlichtDevice.h>
 
 
-enum class StateID { Intro };
-
+enum class StateID { Intro, Start, Simulation };
 
 class StateMachine
 {
 	using StatePtr = std::unique_ptr<State>;
 
 public:
-	StateMachine(irr::IrrlichtDevice* device);
+	StateMachine(StateData* stateData);
 
+	void handleEvent();
 	void update();
+	void draw();
 
 	void pushState(StateID stateID);
 	void popState();
@@ -43,15 +44,15 @@ private:
 	void processStateActions();
 
 	template<typename T>
-	void registerState(StateID stateID, irr::IrrlichtDevice* device);
+	void registerState(StateID stateID, StateData* stateData);
 };
 
 
 template<typename T>
-void StateMachine::registerState(StateID stateID, irr::IrrlichtDevice* device)
+void StateMachine::registerState(StateID stateID, StateData* stateData)
 {
-	this->stateFactory[stateID] = [this, device]()
+	this->stateFactory[stateID] = [this, stateData]()
 	{
-		return std::make_unique<T>(this, device);
+		return std::make_unique<T>(this, stateData);
 	};
 }

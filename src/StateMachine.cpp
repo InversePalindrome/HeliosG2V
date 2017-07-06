@@ -31,11 +31,11 @@ void StateMachine::handleEvent()
 	this->processStateActions();
 }
 
-void StateMachine::update()
+void StateMachine::update(irr::f32 deltaTime)
 {
 	if (!this->states.empty())
 	{
-		this->states.back()->update();
+		this->states.back()->update(deltaTime);
 	}
 
 	this->processStateActions();

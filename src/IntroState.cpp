@@ -14,17 +14,15 @@ IntroState::IntroState(StateMachine* stateMachine, StateData* stateData) :
 	logo(stateData->video->getTexture("Resources/Images/InversePalindromeLogo.png")),
 	timer(stateData->device->getTimer())
 { 
-	//timer->start();
 }
 
 void IntroState::handleEvent()
 {
-
 }
 
-void IntroState::update()
+void IntroState::update(irr::f32 deltaTime)
 {
-	if(this->timer->getTime() >= 2500)
+	if(this->timer->getTime() >= 2500u)
 	{
 		this->stateMachine->popState();
 		this->stateMachine->pushState(StateID::Start);
@@ -33,5 +31,5 @@ void IntroState::update()
 
 void IntroState::draw()
 {
-	this->stateData->video->draw2DImage(this->logo, irr::core::recti(379u, 229u, 773u, 419u), irr::core::recti(0u, 0u, 984u, 475u));
+	this->stateData->video->draw2DImage(this->logo, irr::core::recti(360u, 229u, 773u, 419u), irr::core::recti(0u, 0u, 919u, 411u));
 }

@@ -10,7 +10,8 @@ InversePalindrome.com
 
 
 SimulationState::SimulationState(StateMachine* stateMachine, StateData* stateData) :
-	State(stateMachine, stateData)
+	State(stateMachine, stateData),
+	solarSystem(stateData->sceneManager)
 {
 }
 
@@ -19,9 +20,9 @@ void SimulationState::handleEvent()
 
 }
 
-void SimulationState::update()
+void SimulationState::update(irr::f32 deltaTime)
 {
-
+	this->solarSystem.update(deltaTime);
 }
 
 void SimulationState::draw()

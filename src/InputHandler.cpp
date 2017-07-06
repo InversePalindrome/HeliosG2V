@@ -3,7 +3,7 @@ Copyright (c) 2017 InversePalindrome
 HeliosG2V - InputHandler.cpp
 InversePalindrome.com
 */
-#include <iostream>
+
 
 #include "InputHandler.hpp"
 

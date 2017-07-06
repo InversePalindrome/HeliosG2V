@@ -14,6 +14,7 @@ Application::Application() :
 	video(device->getVideoDriver()),
 	sceneManager(device->getSceneManager()),
 	gui(device->getGUIEnvironment()),
+	elapsedTime(0u),
 	stateData(device, &inputHandler),
 	stateMachine(&stateData)
 {
@@ -41,12 +42,16 @@ void Application::handleEvent()
 
 void Application::update()
 {
-	this->stateMachine.update();
+	auto deltaTime = static_cast<irr::f32>(this->device->getTimer()->getTime() - elapsedTime) / 1000.f;
+
+	elapsedTime = this->device->getTimer()->getTime();
+
+	this->stateMachine.update(deltaTime);
 }
 
 void Application::render()
 {
-	this->video->beginScene(true, true, irr::video::SColor(255, 255, 255, 255));
+	this->video->beginScene(true, true, irr::video::SColor(255u, 0u, 0u, 0u));
 
 	this->stateMachine.draw();
 

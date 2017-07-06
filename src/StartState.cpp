@@ -24,7 +24,7 @@ void StartState::handleEvent()
 	}
 }
 
-void StartState::update()
+void StartState::update(irr::f32 deltaTime)
 {
 
 }

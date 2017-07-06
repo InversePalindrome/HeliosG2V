@@ -30,6 +30,8 @@ private:
 
 	StateData stateData;
 	StateMachine stateMachine;
+
+	irr::u32 elapsedTime;
 	
 	void handleEvent();
 	void update();

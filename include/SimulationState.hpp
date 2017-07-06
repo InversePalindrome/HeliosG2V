@@ -8,6 +8,7 @@ InversePalindrome.com
 #pragma once
 
 #include "State.hpp"
+#include "SolarSystem.hpp"
 
 
 class SimulationState : public State
@@ -16,6 +17,9 @@ public:
 	SimulationState(StateMachine* stateMachine, StateData* stateData);
 
 	virtual void handleEvent() override;
-	virtual void update() override;
+	virtual void update(irr::f32 deltaTime) override;
 	virtual void draw() override;
+
+private:
+	SolarSystem solarSystem;
 };

@@ -8,7 +8,6 @@ InversePalindrome.com
 #pragma once
 
 #include <IrrlichtDevice.h>
-#include <IGUIEnvironment.h>
 
 #include "InputHandler.hpp"
 

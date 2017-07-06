@@ -20,7 +20,7 @@ public:
 	State(StateMachine* stateMachine, StateData* stateData);
 
 	virtual void handleEvent() = 0;
-	virtual void update() = 0;
+	virtual void update(irr::f32 deltaTime) = 0;
 	virtual void draw() = 0;
 
 protected:

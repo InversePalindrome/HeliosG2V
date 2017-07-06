@@ -27,7 +27,7 @@ public:
 	StateMachine(StateData* stateData);
 
 	void handleEvent();
-	void update();
+	void update(irr::f32 deltaTime);
 	void draw();
 
 	void pushState(StateID stateID);

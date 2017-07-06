@@ -18,7 +18,7 @@ public:
 	IntroState(StateMachine* stateMachine, StateData* stateData);
 
 	virtual void handleEvent() override;
-	virtual void update() override;
+	virtual void update(irr::f32 deltaTime) override;
 	virtual void draw() override;
 
 private:

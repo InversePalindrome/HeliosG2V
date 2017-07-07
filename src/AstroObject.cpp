@@ -11,7 +11,7 @@ InversePalindrome.com
 AstroObject::AstroObject(const std::string& name, float scale, float orbitalDisplacement, const irr::core::vector2df& orbitRadius, irr::scene::IMeshSceneNode* node) :
 	MeshEntity(node),
 	name(name),
-	orbitalAngle(0.f),
+	orbitalAngle(90.f),
 	orbitalDisplacement(orbitalDisplacement),
 	orbitRadius(orbitRadius)
 {

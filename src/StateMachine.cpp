@@ -9,6 +9,7 @@ InversePalindrome.com
 #include "SimulationState.hpp"
 #include "IntroState.hpp"
 #include "StartState.hpp"
+#include "PauseState.hpp"
 
 
 StateMachine::StateMachine(StateData* stateData) :
@@ -19,6 +20,7 @@ StateMachine::StateMachine(StateData* stateData) :
 	registerState<IntroState>(StateID::Intro, stateData);
 	registerState<StartState>(StateID::Start, stateData);
 	registerState<SimulationState>(StateID::Simulation, stateData);
+	registerState<PauseState>(StateID::Pause, stateData);
 }
 
 void StateMachine::handleEvent()
@@ -45,7 +47,27 @@ void StateMachine::draw()
 {
 	if (!this->states.empty())
 	{
-		this->states.back()->draw();
+		if (this->states.back()->isTransparent() && this->states.size() > 1)
+		{
+			auto itr = std::end(this->states);
+
+			for (; itr != std::begin(this->states); --itr)
+			{
+				if (itr != std::end(this->states) && !(*itr)->isTransparent())
+				{
+					break;
+				}
+			}
+
+			for (; itr != std::end(this->states); ++itr)
+			{
+				(*itr)->draw();
+			}
+		}
+		else
+		{
+			this->states.back()->draw();
+		}
 	}
 }
 

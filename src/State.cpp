@@ -14,3 +14,8 @@ State::State(StateMachine* stateMachine, StateData* stateData) :
 	stateData(stateData)
 {
 }
+
+bool State::isTransparent()
+{
+	return false;
+}

@@ -17,7 +17,7 @@ InversePalindrome.com
 #include <IrrlichtDevice.h>
 
 
-enum class StateID { Intro, Start, Simulation };
+enum class StateID { Intro, Start, Simulation, Pause };
 
 class StateMachine
 {

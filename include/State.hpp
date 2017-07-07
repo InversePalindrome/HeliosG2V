@@ -23,6 +23,8 @@ public:
 	virtual void update(irr::f32 deltaTime) = 0;
 	virtual void draw() = 0;
 
+	virtual bool isTransparent();
+
 protected:
 	StateMachine* stateMachine;
 	StateData* stateData;

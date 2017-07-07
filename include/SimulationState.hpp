@@ -10,6 +10,8 @@ InversePalindrome.com
 #include "State.hpp"
 #include "SolarSystem.hpp"
 
+#include <IGUITabControl.h>
+
 
 class SimulationState : public State
 {
@@ -22,4 +24,6 @@ public:
 
 private:
 	SolarSystem solarSystem;
+
+	irr::gui::IGUITabControl* tabControl;
 };

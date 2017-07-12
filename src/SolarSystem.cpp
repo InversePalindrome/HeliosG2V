@@ -21,32 +21,32 @@ SolarSystem::SolarSystem(irr::scene::ISceneManager* sceneManager, InputHandler* 
 	sceneManager->addCameraSceneNodeMaya(0u, 100.f, 100.f, 100.f, 1u, 3100.f);
 	sceneManager->addSkyDomeSceneNode(sceneManager->getVideoDriver()->getTexture("Resources/Images/SpaceBackground.jpg"));
 
-	astroObjects.emplace(AstroObjectID::Sun, AstroObject("Sun", 5.f, 0.f, irr::core::vector2df(0.f, 0.f),
-		sceneManager->addMeshSceneNode(sceneManager->getMesh("Resources/Meshes/football-soccer-ball.obj"))));
+	astroObjects.emplace(AstroObjectID::Sun, AstroObject("Sun", 22.f, 0.f, irr::core::vector2df(0.f, 0.f),
+		sceneManager->addMeshSceneNode(sceneManager->getMesh("Resources/Meshes/Sun.obj"))));
 
-	astroObjects.emplace(AstroObjectID::Merury, AstroObject("Mercury", 0.4f, 2.f, irr::core::vector2df(620.f, 400.f),
-		sceneManager->addMeshSceneNode(sceneManager->getMesh("Resources/Meshes/football-soccer-ball.obj"))));
+	astroObjects.emplace(AstroObjectID::Merury, AstroObject("Mercury", 1.8f, 2.f, irr::core::vector2df(620.f, 400.f),
+		sceneManager->addMeshSceneNode(sceneManager->getMesh("Resources/Meshes/Mercury.obj"))));
 
-	astroObjects.emplace(AstroObjectID::Venus, AstroObject("Venus", 0.9f, 1.5f, irr::core::vector2df(840.f, 620.f),
-		sceneManager->addMeshSceneNode(sceneManager->getMesh("Resources/Meshes/football-soccer-ball.obj"))));
+	astroObjects.emplace(AstroObjectID::Venus, AstroObject("Venus", 4.2f, 1.5f, irr::core::vector2df(840.f, 620.f),
+		sceneManager->addMeshSceneNode(sceneManager->getMesh("Resources/Meshes/Venus.obj"))));
 
-	astroObjects.emplace(AstroObjectID::Earth, AstroObject("Earth", 1.f, 1.f, irr::core::vector2df(1100.f, 820.f),
-		sceneManager->addMeshSceneNode(sceneManager->getMesh("Resources/Meshes/football-soccer-ball.obj"))));
+	astroObjects.emplace(AstroObjectID::Earth, AstroObject("Earth", 4.6f, 1.f, irr::core::vector2df(1100.f, 820.f),
+		sceneManager->addMeshSceneNode(sceneManager->getMesh("Resources/Meshes/Earth.obj"))));
 
-	astroObjects.emplace(AstroObjectID::Mars, AstroObject("Mars", 0.5f, 0.5f, irr::core::vector2df(1500.f, 1180.f),
-		sceneManager->addMeshSceneNode(sceneManager->getMesh("Resources/Meshes/football-soccer-ball.obj"))));
+	astroObjects.emplace(AstroObjectID::Mars, AstroObject("Mars", 2.4f, 0.5f, irr::core::vector2df(1500.f, 1180.f),
+		sceneManager->addMeshSceneNode(sceneManager->getMesh("Resources/Meshes/Mars.obj"))));
 
-	astroObjects.emplace(AstroObjectID::Jupiter, AstroObject("Jupiter", 2.2f, 0.25f, irr::core::vector2df(1800.f, 1300.f),
-		sceneManager->addMeshSceneNode(sceneManager->getMesh("Resources/Meshes/football-soccer-ball.obj"))));
+	astroObjects.emplace(AstroObjectID::Jupiter, AstroObject("Jupiter", 10.f, 0.25f, irr::core::vector2df(1800.f, 1300.f),
+		sceneManager->addMeshSceneNode(sceneManager->getMesh("Resources/Meshes/Jupiter.obj"))));
 
-	astroObjects.emplace(AstroObjectID::Saturn, AstroObject("Saturn", 1.8f, 0.2f, irr::core::vector2df(2200.f, 1500.f),
-		sceneManager->addMeshSceneNode(sceneManager->getMesh("Resources/Meshes/football-soccer-ball.obj"))));
+	astroObjects.emplace(AstroObjectID::Saturn, AstroObject("Saturn", 8.2f, 0.2f, irr::core::vector2df(2200.f, 1500.f),
+		sceneManager->addMeshSceneNode(sceneManager->getMesh("Resources/Meshes/Saturn.obj"))));
 
-	astroObjects.emplace(AstroObjectID::Uranus, AstroObject("Uranus", 1.4f, 0.1f, irr::core::vector2df(3000.f, 1700.f),
-		sceneManager->addMeshSceneNode(sceneManager->getMesh("Resources/Meshes/football-soccer-ball.obj"))));
+	astroObjects.emplace(AstroObjectID::Uranus, AstroObject("Uranus", 6.f, 0.1f, irr::core::vector2df(3000.f, 1700.f),
+		sceneManager->addMeshSceneNode(sceneManager->getMesh("Resources/Meshes/Uranus.obj"))));
 
-	astroObjects.emplace(AstroObjectID::Neptune, AstroObject("Neptune", 1.3f, 0.05f, irr::core::vector2df(3400.f, 1900.f),
-		sceneManager->addMeshSceneNode(sceneManager->getMesh("Resources/Meshes/football-soccer-ball.obj"))));
+	astroObjects.emplace(AstroObjectID::Neptune, AstroObject("Neptune", 5.9f, 0.05f, irr::core::vector2df(3400.f, 1900.f),
+		sceneManager->addMeshSceneNode(sceneManager->getMesh("Resources/Meshes/Neptune.obj"))));
 
 	auto* font = sceneManager->getGUIEnvironment()->getFont("Resources/Fonts/governor.XML");
 

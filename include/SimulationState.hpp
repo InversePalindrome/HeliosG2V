@@ -16,14 +16,14 @@ InversePalindrome.com
 class SimulationState : public State
 {
 public:
-	SimulationState(StateMachine* stateMachine, StateData* stateData);
+    SimulationState(StateMachine* stateMachine, StateData* stateData);
 
-	virtual void handleEvent() override;
-	virtual void update(irr::f32 deltaTime) override;
-	virtual void draw() override;
+    virtual void handleEvent() override;
+    virtual void update(irr::f32 deltaTime) override;
+    virtual void draw() override;
 
 private:
-	SolarSystem solarSystem;
+    SolarSystem solarSystem;
 
-	irr::gui::IGUITabControl* tabControl;
+    irr::gui::IGUITabControl* tabControl;
 };

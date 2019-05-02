@@ -15,7 +15,7 @@ InversePalindrome.com
 class MeshEntity : public Entity
 {
 public:
-	MeshEntity(irr::scene::IMeshSceneNode* node);
+    MeshEntity(irr::scene::IMeshSceneNode* node);
 
-	void setMesh(irr::scene::IMesh* mesh);
+    void setMesh(irr::scene::IMesh* mesh);
 };

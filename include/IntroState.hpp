@@ -15,14 +15,14 @@ InversePalindrome.com
 class IntroState : public State
 {
 public:
-	IntroState(StateMachine* stateMachine, StateData* stateData);
+    IntroState(StateMachine* stateMachine, StateData* stateData);
 
-	virtual void handleEvent() override;
-	virtual void update(irr::f32 deltaTime) override;
-	virtual void draw() override;
+    virtual void handleEvent() override;
+    virtual void update(irr::f32 deltaTime) override;
+    virtual void draw() override;
 
 private:
-	irr::video::ITexture* logo;
-	irr::ITimer* timer;
+    irr::video::ITexture* logo;
+    irr::ITimer* timer;
 };
 

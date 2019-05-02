@@ -15,13 +15,13 @@ InversePalindrome.com
 class InputHandler : public irr::IEventReceiver
 {
 public:
-	InputHandler();
+    InputHandler();
 
-	virtual bool OnEvent(const irr::SEvent& event) override;
+    virtual bool OnEvent(const irr::SEvent& event) override;
 
-	bool isKeyDown() const;
-	bool isKeyDown(irr::EKEY_CODE key) const;
+    bool isKeyDown() const;
+    bool isKeyDown(irr::EKEY_CODE key) const;
 
 private:
-	std::array<bool, irr::KEY_KEY_CODES_COUNT> keys;
+    std::array<bool, irr::KEY_KEY_CODES_COUNT> keys;
 };

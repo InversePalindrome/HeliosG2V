@@ -9,12 +9,12 @@ InversePalindrome.com
 
 
 MeshEntity::MeshEntity(irr::scene::IMeshSceneNode* node) :
-	Entity(node)
+    Entity(node)
 {
-	node->setMaterialFlag(irr::video::EMF_LIGHTING, false);
+    node->setMaterialFlag(irr::video::EMF_LIGHTING, false);
 }
 
 void MeshEntity::setMesh(irr::scene::IMesh* mesh)
 {
-	static_cast<irr::scene::IMeshSceneNode*>(this->node)->setMesh(mesh);
+    static_cast<irr::scene::IMeshSceneNode*>(this->node)->setMesh(mesh);
 }

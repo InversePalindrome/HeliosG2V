@@ -9,10 +9,10 @@ InversePalindrome.com
 
 
 StateData::StateData(irr::IrrlichtDevice* device, InputHandler* inputHandler) :
-	device(device),
-	video(device->getVideoDriver()),
-	sceneManager(device->getSceneManager()),
-	gui(device->getGUIEnvironment()),
-	inputHandler(inputHandler)
+    device(device),
+    video(device->getVideoDriver()),
+    sceneManager(device->getSceneManager()),
+    gui(device->getGUIEnvironment()),
+    inputHandler(inputHandler)
 {
 }

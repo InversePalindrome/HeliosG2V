@@ -16,24 +16,24 @@ InversePalindrome.com
 class Application
 {
 public:
-	Application();
+    Application();
 
-	void run();
+    void run();
 
 private:
-	InputHandler inputHandler;
+    InputHandler inputHandler;
 
-	irr::IrrlichtDevice* device;
-	irr::video::IVideoDriver* video;
-	irr::scene::ISceneManager* sceneManager;
-	irr::gui::IGUIEnvironment* gui;
+    irr::IrrlichtDevice* device;
+    irr::video::IVideoDriver* video;
+    irr::scene::ISceneManager* sceneManager;
+    irr::gui::IGUIEnvironment* gui;
 
-	StateData stateData;
-	StateMachine stateMachine;
+    StateData stateData;
+    StateMachine stateMachine;
 
-	irr::u32 elapsedTime;
-	
-	void handleEvent();
-	void update();
-	void render();
+    irr::u32 elapsedTime;
+
+    void handleEvent();
+    void update();
+    void render();
 };

@@ -21,38 +21,38 @@ enum class StateID { Intro, Start, Simulation, Pause };
 
 class StateMachine
 {
-	using StatePtr = std::unique_ptr<State>;
+    using StatePtr = std::unique_ptr<State>;
 
 public:
-	StateMachine(StateData* stateData);
+    StateMachine(StateData* stateData);
 
-	void handleEvent();
-	void update(irr::f32 deltaTime);
-	void draw();
+    void handleEvent();
+    void update(irr::f32 deltaTime);
+    void draw();
 
-	void pushState(StateID stateID);
-	void popState();
-	void clearStates();
+    void pushState(StateID stateID);
+    void popState();
+    void clearStates();
 
 private:
-	std::vector<StatePtr> states;
-	std::vector<std::function<void()>> stateActions;
-	std::unordered_map<StateID, std::function<StatePtr()>> stateFactory;
+    std::vector<StatePtr> states;
+    std::vector<std::function<void()>> stateActions;
+    std::unordered_map<StateID, std::function<StatePtr()>> stateFactory;
 
-	StatePtr getState(StateID stateID);
+    StatePtr getState(StateID stateID);
 
-	void processStateActions();
+    void processStateActions();
 
-	template<typename T>
-	void registerState(StateID stateID, StateData* stateData);
+    template<typename T>
+    void registerState(StateID stateID, StateData* stateData);
 };
 
 
 template<typename T>
 void StateMachine::registerState(StateID stateID, StateData* stateData)
 {
-	this->stateFactory[stateID] = [this, stateData]()
-	{
-		return std::make_unique<T>(this, stateData);
-	};
+    this->stateFactory[stateID] = [this, stateData]()
+    {
+        return std::make_unique<T>(this, stateData);
+    };
 }

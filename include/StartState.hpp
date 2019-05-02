@@ -13,12 +13,12 @@ InversePalindrome.com
 class StartState : public State
 {
 public:
-	StartState(StateMachine* stateMachine, StateData* stateData);
+    StartState(StateMachine* stateMachine, StateData* stateData);
 
-	virtual void handleEvent() override;
-	virtual void update(irr::f32 deltaTime) override;
-	virtual void draw() override;
+    virtual void handleEvent() override;
+    virtual void update(irr::f32 deltaTime) override;
+    virtual void draw() override;
 
 private:
-	irr::video::ITexture* background;
+    irr::video::ITexture* background;
 };

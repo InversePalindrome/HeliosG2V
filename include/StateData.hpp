@@ -14,12 +14,12 @@ InversePalindrome.com
 
 struct StateData
 {
-	StateData(irr::IrrlichtDevice* device, InputHandler* inputHandler);
+    StateData(irr::IrrlichtDevice* device, InputHandler* inputHandler);
 
-	irr::IrrlichtDevice* device;
-	irr::video::IVideoDriver* video;
-	irr::scene::ISceneManager* sceneManager;
-	irr::gui::IGUIEnvironment* gui;
+    irr::IrrlichtDevice* device;
+    irr::video::IVideoDriver* video;
+    irr::scene::ISceneManager* sceneManager;
+    irr::gui::IGUIEnvironment* gui;
 
-	InputHandler* inputHandler;
+    InputHandler* inputHandler;
 };

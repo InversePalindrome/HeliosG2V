@@ -10,12 +10,12 @@ InversePalindrome.com
 
 
 State::State(StateMachine* stateMachine, StateData* stateData) :
-	stateMachine(stateMachine),
-	stateData(stateData)
+    stateMachine(stateMachine),
+    stateData(stateData)
 {
 }
 
 bool State::isTransparent()
 {
-	return false;
+    return false;
 }

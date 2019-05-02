@@ -13,11 +13,11 @@ InversePalindrome.com
 class PauseState : public State
 {
 public:
-	PauseState(StateMachine* stateMachine, StateData* stateData);
+    PauseState(StateMachine* stateMachine, StateData* stateData);
 
-	virtual void handleEvent() override;
-	virtual void update(irr::f32 deltaTime) override;
-	virtual void draw() override;
+    virtual void handleEvent() override;
+    virtual void update(irr::f32 deltaTime) override;
+    virtual void draw() override;
 
-	virtual bool isTransparent() override;
+    virtual bool isTransparent() override;
 };

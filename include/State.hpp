@@ -17,15 +17,15 @@ class StateMachine;
 class State
 {
 public:
-	State(StateMachine* stateMachine, StateData* stateData);
+    State(StateMachine* stateMachine, StateData* stateData);
 
-	virtual void handleEvent() = 0;
-	virtual void update(irr::f32 deltaTime) = 0;
-	virtual void draw() = 0;
+    virtual void handleEvent() = 0;
+    virtual void update(irr::f32 deltaTime) = 0;
+    virtual void draw() = 0;
 
-	virtual bool isTransparent();
+    virtual bool isTransparent();
 
 protected:
-	StateMachine* stateMachine;
-	StateData* stateData;
+    StateMachine* stateMachine;
+    StateData* stateData;
 };
